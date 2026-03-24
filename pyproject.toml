@@ -1,0 +1,44 @@
+[tool.poetry]
+name = "scholarhub-de"
+version = "0.1.0"
+description = "Graduate funding intelligence data pipeline"
+authors = ["ScholarHub Team <team@scholarhub.dev>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+duckdb = "^0.10.0"
+requests = "^2.31.0"
+python-dotenv = "^1.0.0"
+pydantic-settings = "^2.2.0"
+tenacity = "^8.2.3"        # retry logic
+structlog = "^24.1.0"      # structured logging
+tqdm = "^4.66.0"           # progress bars
+streamlit = "^1.31.0"      # dashboard framework
+plotly = "^5.18.0"         # interactive charts
+pandas = "^2.2.0"          # data manipulation
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0.0"
+pytest-cov = "^4.1.0"
+pytest-mock = "^3.12.0"
+black = "^24.0.0"
+ruff = "^0.3.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 100
+target-version = ['py311']
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+python_classes = "Test*"
+python_functions = "test_*"

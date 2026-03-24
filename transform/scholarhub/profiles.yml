@@ -1,0 +1,19 @@
+# transform/scholarhub/profiles.yml
+# This tells dbt HOW to connect to your database.
+# profiles.yml lives OUTSIDE git (it contains credentials in production).
+# For local dev, it's safe to commit since we're using a local file path.
+
+scholarhub:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: "../../warehouse/scholarhub.duckdb"   # relative to profiles.yml
+      schema: analytics     # dbt creates this schema in DuckDB
+      threads: 4
+
+    prod:
+      type: duckdb
+      path: "../../warehouse/scholarhub_prod.duckdb"
+      schema: analytics
+      threads: 4

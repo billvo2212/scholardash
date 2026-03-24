@@ -1,0 +1,47 @@
+# .airflowignore
+# Prevents Airflow from parsing non-DAG Python files as DAGs
+
+# Project code directories (not DAGs)
+extractors/
+transform/
+warehouse/
+config/
+tests/
+dashboard/
+
+# Data directories
+data/
+*.duckdb
+*.duckdb.wal
+
+# Python artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.pytest_cache/
+
+# Environment and config
+.env
+.env.example
+venv/
+.venv/
+
+# Documentation
+docs/
+*.md
+CLAUDE.md
+IMPLEMENTATION_NOTES_*.md
+
+# IDE and version control
+.git/
+.vscode/
+.idea/
+*.ipynb
+*.ipynb_checkpoints/
+
+# Docker and logs
+logs/
+plugins/
+docker-compose.yml
+Dockerfile

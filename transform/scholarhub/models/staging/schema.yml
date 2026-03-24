@@ -1,0 +1,41 @@
+version: 2
+
+models:
+  - name: stg_nsf_awards
+    description: "Staged NSF award data parsed from raw JSON"
+    columns:
+      - name: award_id
+        description: "NSF award ID (unique identifier)"
+        tests:
+          - not_null
+          - unique
+
+      - name: title
+        description: "Award title"
+        tests:
+          - not_null
+
+      - name: funding_amount
+        description: "Funds obligated amount in USD"
+        tests:
+          - not_null
+
+      - name: start_date
+        description: "Award start date"
+
+      - name: end_date
+        description: "Award expiration date"
+
+      - name: pi_name
+        description: "Principal Investigator full name"
+
+      - name: institution
+        description: "Performing institution"
+
+      - name: quality_score
+        description: "Data quality score (0.0 to 1.0)"
+        tests:
+          - not_null
+
+      - name: is_valid_record
+        description: "Boolean flag indicating if record passes validation"
